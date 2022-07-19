@@ -1,0 +1,8 @@
+https://xenie.xebia.in/ticket-tool/v1/tickets/user/missed/department/file
+https://xenie.xebia.in/ticket-tool/v1/tickets/user/allNotClosedOrResoloved/file
+https://xenie.xebia.in/ticket-tool/v1/tickets/user/allcreated/file?startDate=2022-04-04&endDate=2022-04-27
+https://xenie.xebia.in/ticket-tool/v1/tickets/user/ticketsFeedbackRatings/file?startDate=2022-03-04&endDate=2022-04-27
+
+
+http://192.168.7.105:8085/ticket-tool/v1/tickets/resolution/25368
+http://192.168.7.105:8085/ticket-tool/v1/tickets/change-status/25368?status=RESOLVED
