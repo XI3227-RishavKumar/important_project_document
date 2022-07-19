@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "c551f62d-9052-4cf0-a9c8-2544948cd415",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16184636"
+	},
+	"item": [
+		{
+			"name": "agile_ncr",
+			"item": [
+				{
+					"name": "sendEmail",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "agilencr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n{\r\n    \"emailFrom\":\"rishav7004461@gmail.com\",\r\n    \"emailTo\":\"rishav7079@gmail.com\",\r\n    \"emailSubject\":\"java backend test\",\r\n    \"emailContent\":\"hey guys this mail is for testing purpose please do not reply to this mail\"\r\n},\r\n{\r\n    \"emailFrom\":\"rishav7004461@gmail.com\",\r\n    \"emailTo\":\"ymayank801@gmail.com\",\r\n    \"emailSubject\":\"java backend test\",\r\n    \"emailContent\":\"hey guys this mail is for testing purpose please do not reply to this mail\"\r\n},\r\n{\r\n    \"emailFrom\":\"rishav7004461@gmail.com\",\r\n    \"emailTo\":\"aayushsinghk84@gmail.com\",\r\n    \"emailSubject\":\"java backend test\",\r\n    \"emailContent\":\"hey guys this mail is for testing purpose please do not reply to this mail\"\r\n},\r\n    \r\n{\r\n    \"emailFrom\":\"rishav7004461@gmail.com\",\r\n    \"emailTo\":\"vivekchhn32@gmail.com\",\r\n    \"emailSubject\":\"qiegfiefhfbdfh\",\r\n    \"emailContent\":\"qeuiuesduwguwgfuywgfuwfguygf\"\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/agilencr/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"agilencr",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "contactUS",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "agilencr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"7004461445\", \r\n    \"organizationName\":\"Xebia IT Architect\", \r\n    \"emailSubject\": \"Test Email\", \r\n    \"fullName\": \"Test Name\",  \r\n    \"emailAddress\":\"aaa@aa.com\",  \r\n    \"emailMessage\":\"Test Message\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/agilencr/contactus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"agilencr",
+								"contactus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "callForPage",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "agilencr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorName\":\"rishav kumar\", \r\n    \"authorDesignation\":\"developer\", \r\n    \"authorEmail\": \"rishav7079@gmail.com\", \r\n    \"authorContactNumber\": \"7079039006\",  \r\n    \"authorOrganisationNAme\":\"xebia\",  \r\n    \"authorLocation\":\"punjab india\",\r\n    \"coAuthorName\":\"ayush kumar\", \r\n    \"coAuthorDesignation\":\"ceo\", \r\n    \"coAuthorEmail\": \"ayush@gmail.com\", \r\n    \"coAuthorContactNumber\": \"7004461447\",  \r\n    \"coAuthorOrganisationNAme\":\"lpu\",  \r\n    \"coAuthorLocation\":\"punjab india\",\r\n    \"talkTitle\":\"time mangement\",\r\n    \"highLevelAbstract\":\"The amount of complexity by which a system is viewed or programmed. The higher the level, the less detail. The lower the level, the more detail. The highest level of abstraction is the entire system.\",\r\n    \"keyTakeAways\":\"productivity,punctual\",\r\n    \"topicPresentedBefore\":0,\r\n    \"speakerInPast\":1,\r\n    \"conferenceLink\":\"https://www.zoho.com/people/?zsrc=fromproduct#home/dashboard\",\r\n    \"socialMediaHandle\":\"rishavLinkedin7079\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/agilencr/callforpapers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"agilencr",
+								"callforpapers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

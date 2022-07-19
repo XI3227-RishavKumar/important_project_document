@@ -1,0 +1,2965 @@
+{
+	"info": {
+		"_postman_id": "b8869a50-86e0-49da-9191-f7d8638bbc16",
+		"name": "Xebia-Helpdesk-Dev Azure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16184636"
+	},
+	"item": [
+		{
+			"name": "master-data",
+			"item": [
+				{
+					"name": "locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/master-data/locations",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"master-data",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"type": "text",
+								"value": "ANDROID",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/master-data/departments",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"master-data",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "classifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/master-data/classifications",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"master-data",
+								"classifications"
+							]
+						},
+						"description": "classifications"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"isha.gulsia@xebia.com\",\n\t\"password\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/logout",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"admin@xebia.com\",\n\t\"password\" : \"pwd\",\n\t\"confirmPassword\" : \"pwd\"\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NzAwNDg2LCJpYXQiOjE2MTQ4MzY0ODYsImp0aSI6ImY3OWNhNmM4LTRkNDEtNGE5Mi04YTg1LTQ5MTY1NmM4MmVhYSJ9.zrPm-azANZjoqT1nFoC44G9H1d44jXGDUbckEjAGlZmX-LVzuSTO3bwGfbEUcFxga_k62FuIVYWmyV2C3qs6kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/5",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB"
+									}
+								],
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/users/5",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Mar 2021 17:26:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614792415638,\n    \"code\": 200,\n    \"message\": \"success\",\n    \"result\": {\n        \"userId\": 5,\n        \"contactInfo\": {\n            \"email\": \"krupesh.anadkat@xebia.com\"\n        },\n        \"name\": \"Krupesh  Anadkat\",\n        \"displayName\": \"Krupesh\",\n        \"location\": {\n            \"country\": \"Gurgaon\",\n            \"timeZone\": null\n        },\n        \"rating\": 5,\n        \"enabled\": true,\n        \"resetPassword\": false,\n        \"officeBookingFeature\": true,\n        \"date\": \"2021-03-03\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "signup User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"ankur.siwach@xebia.com\",\n\t\"password\" : \"hello\",\n\t\"confirmPassword\" : \"hello\"\n\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/signUp",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"siddharth.hota@xebia.com\"\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/forgetPassword",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"siddharth.hota@xebia.com\",\n\"password\":\"hello1\",\n\"confirmPassword\":\"hello1\"\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/reset-password",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign-admin-role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmt1ci5zaXdhY2hAeGViaWEuY29tIiwiZXhwIjoxNTg5MDI3ODMwLCJpYXQiOjE1ODgxNjM4MzAsImp0aSI6ImY0YWU3YjhmLTE2NWEtNDJkNS05NDFjLTQxNjIxZDRjYzNiNCJ9.x2OzZiKprnReCtqcG51-kp5O2tuFblqz9J0R5ChiPOX13W8ezc_xK50k0YCzKvPxkUOAsrpyMk-PkOffrra8_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/admin-assign?departmentId=2&emailId=ankur.siwach@xebia.com",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"admin-assign"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "departmentId",
+									"value": "2"
+								},
+								{
+									"key": "emailId",
+									"value": "ankur.siwach@xebia.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "initial-user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/dummy-user",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"dummy-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaWRkaGFydGguaG90YUB4ZWJpYS5jb20iLCJleHAiOjE1ODcxMDE1NjYsImlhdCI6MTU4NjIzNzU2NiwianRpIjoiY2VkN2NiNzQtYjFkYi00NGUwLTgwOTgtZjdjYTY4NmY2NjliIn0.PqINKN8a3wzbKphfaXWmGYX8S7WLj5AxkMj-AlSfMMRMEzH_zOb_PV6tj5Gt-8DDK12myFLJEe6fEWjuK6241A",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"siddharth.hota@xebia.com\",\n\"oldPassword\":\"hello1\",\n\"password\":\"batman\",\n\"confirmPassword\":\"batman\"\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/change-password",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConfirmRegistration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/confirmRegistration?token=603870",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"confirmRegistration"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "603870"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view-admin-users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1ODkwODMyNTUsImlhdCI6MTU4ODIxOTI1NSwianRpIjoiMGEzMTVkNDItOGE1ZS00MGMzLTgwYjEtMzMxZTJjMjYyMDgzIn0.rtQXt9Mlq_kFe28DDmOVszfDtmjjD2xhmnrPNYwRoQAvV7Tp7dH3BF0qEf0jdpMzkgTzyaWAP5k1FHyE4HexFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/admins",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateOTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"krupesh.anadkat@xebia.com\"\n}"
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/otp",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "generateOTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"krupesh.anadkat@xebia.com\"\n}"
+								},
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/users/otp",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"users",
+										"otp"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Mar 2021 17:25:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614792351104,\n    \"code\": 200,\n    \"message\": \"success\",\n    \"result\": {\n        \"userId\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "verifyOTP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/users/verifyOTP?otp=916292",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"users",
+								"verifyOTP"
+							],
+							"query": [
+								{
+									"key": "otp",
+									"value": "916292"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "verifyOTP",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/users/verifyOTP?otp=818209",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"users",
+										"verifyOTP"
+									],
+									"query": [
+										{
+											"key": "otp",
+											"value": "818209"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Mar 2021 17:26:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614792385587,\n    \"code\": 200,\n    \"message\": \"success\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NjU2Mzg1LCJpYXQiOjE2MTQ3OTIzODUsImp0aSI6ImEyNjdhOWQ0LTM4MWYtNDM0Mi1hNTVmLTU3ZTdiMTdhZDYyZSJ9.3Vj_HEf5FfzjRpyle9gUdhuHa_wM6y-qlRMzByH4DdCQ2erOZJUo57J7gBcVnl_beWH2007AFDSB1PFP_AeWWg\",\n    \"result\": {\n        \"userId\": 5,\n        \"contactInfo\": {\n            \"email\": \"krupesh.anadkat@xebia.com\"\n        },\n        \"name\": \"Krupesh  Anadkat\",\n        \"displayName\": \"Krupesh\",\n        \"location\": {\n            \"country\": \"Gurgaon\",\n            \"timeZone\": null\n        },\n        \"rating\": 5,\n        \"enabled\": true,\n        \"resetPassword\": false,\n        \"officeBookingFeature\": true,\n        \"date\": \"2021-03-03\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "Create Ticket",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcGF0aGFrQHhlYmlhLmNvbSIsImV4cCI6MTU5MzA4NzIxMiwiaWF0IjoxNTkyMjIzMjEyLCJqdGkiOiJkNDFmYmIzOC0wYjljLTQ3OTItOGZjNS03NzM4OGNkMWVkYTYifQ.hDjfNoJdka9oEC10xqnh0CRWmt31pFpjpUyuR5pzXJ-FoQKJGXlrXQmEe1ChEtGAnSIRR0qmNWSOmUdi5koW0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "{\n\t\"locationId\" : 1,\n\t\"departmentId\" : 4,\n\t\"subIssueId\" : 20,\n\"subCategoryId\" : 1,\n\t\"classificationId\" : 5,\n\t\"subject\" : \"Feedback Test\",\n\t\"description\": \"Please solve my login issue\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ankursaxena/Pictures/Screenshot from 2020-06-09 14-19-02.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1OTI4MDc4MDAsImlhdCI6MTU5MTk0MzgwMCwianRpIjoiMmYyOTg1YmMtMjRhMy00YjI4LWFhOTUtNWQxZDRhNjljNmMzIn0.rX_IMhuzxy-XXEMALu6N4CCZ4wm6AmQ2GgbuqpWfEEGaIpEYX2b43enNVznLm3qfCiWHhB2aAGfdoOC5p_kAew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1ODQzNDE3MTAsImlhdCI6MTU4MzQ3NzcxMCwianRpIjoiYjM4YzM5OWMtNzBhMy00MDFiLTllOTktNmMwZGEyODRmOGYyIn0.MjscEvRoJ3RuBj54X94eHTcgKqv5-cg3xc5kNU29QzzdbP_EDj9BK0qOMWEg7ilqZ6Y8woqt2xMUeq7ioq1v5g",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "ANDROID",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "{\n\t\"description\" : \"Updating ticket\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/1",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTk0NDMzMjcwLCJpYXQiOjE1OTM1NjkyNzAsImp0aSI6IjgwY2JkOGIwLTI5NTQtNDQ0ZC04ZDQ4LTNiZmNkNDgyYmE0YSJ9.SvuErjNWr7zlmT3o7cPTcHd5NGK6aWMcSkuKkh2a8cjcHpEqDy1ndwx7cpEa-WMtkNbTgYFEF08nWQPAR84onQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://xdesk.herokuapp.com/ticket-tool/v1/tickets/?page=0&limit=50",
+							"protocol": "https",
+							"host": [
+								"xdesk",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticketDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTk0NDMzMjcwLCJpYXQiOjE1OTM1NjkyNzAsImp0aSI6IjgwY2JkOGIwLTI5NTQtNDQ0ZC04ZDQ4LTNiZmNkNDgyYmE0YSJ9.SvuErjNWr7zlmT3o7cPTcHd5NGK6aWMcSkuKkh2a8cjcHpEqDy1ndwx7cpEa-WMtkNbTgYFEF08nWQPAR84onQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsb2tlc2hAeGViaWEuY29tIiwiZXhwIjoxNTg0NzczMzMyLCJpYXQiOjE1ODM5MDkzMzIsImp0aSI6IjI1OTBjNTZkLWIzODQtNDM2Mi1iZWFlLTkyYTZiOWIwYzNjZCJ9.l4VPzDAseWE7ZDKvZLSzXofryU2gGpgzvlq5FHm6dVUtlVHAkdI2qqCctzves9Eu0bf-sy9OPeBYGcEjEN0ovg",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://xdesk.herokuapp.com/ticket-tool/v1/tickets/7",
+							"protocol": "https",
+							"host": [
+								"xdesk",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Replies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWphdC5zaGFybWFAeGViaWEuY29tIiwiZXhwIjoxNTkzMTQ0MjM5LCJpYXQiOjE1OTIyODAyMzksImp0aSI6IjcxMDU4NjM0LWUxYmQtNDljMC1hOTNlLTU3MmY4MzA4YWU4OCJ9.GFDLjfG_gubKMcgNTf8Ve2LYzwS5ZzxJaFF5nkZFiP0Df0kLLXWlCx7zNg5Oey44n5WNpFTc2TAoD0ZBxR-SjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbG9rQHhlYmlhLmNvbSIsImV4cCI6MTU4NDg4NDQwNCwiaWF0IjoxNTg0MDIwNDA0LCJqdGkiOiI2ODAxZDdlNy0yMjgwLTRjMDgtODEzNC0zY2MwOTRlOGMwOGIifQ.nerTnE_VKaar-pz71ifcBzHlyrabN64xeUz3TBuCH0WvWWkc_9tWhyeYqGYSbtSqRQ_rOeIDzMKZm0P2fhGR7w",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "request",
+									"value": "{\n\n\t\"text\":\"Please check at your end, i just integrated email\",\n\t\"conversationType\":\"Reply\",\n\t\"mailRecepients\":\"krupesh.anadkat@xebia.com\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/xeuser/Desktop/Screenshot 2020-06-16 at 9.28.53 AM.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/replies/722",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"replies",
+								"722"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Replies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTk0MDA4NDEwLCJpYXQiOjE1OTMxNDQ0MTAsImp0aSI6IjMyN2NmNTZmLTY3YzEtNGQxZC1iZjdkLTQ0OWNiZjc3NWU3YSJ9.XrCRx4LNztnNUZuK6DlI_61SdHDzzE6kRm-BIsZXX-0347Ow8TO8oogpXvzmlyVJWlfNXJNx27q9Tfkw7bXhDg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/replies/2",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"replies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket with Attachment Support",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbG9rQHhlYmlhLmNvbSIsImV4cCI6MTU4NTMwODYwOSwiaWF0IjoxNTg0NDQ0NjA5LCJqdGkiOiJiMzMzNDYwMi0zMDU4LTRkZWQtYTBhYi1hNDlkYjM1ZWIwNzUifQ._eWXIay6e39E5krQipkGwRjFOazF1bWVzqrKLvgj6c4T97JK2SR72Ro48XdKZWYmtU7OezMdUscAao7a_PA_hw",
+								"type": "text"
+							},
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "ANDROID",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "request",
+									"value": "{\n\t\"locationId\" : 2\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/1",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preview attachment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/octet-stream",
+								"type": "text"
+							},
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/preview?filepath=/home/ec2-user/helpdesk_deploy/UPLOAD/3/file_example_MP3_700KB.mp3_1590489363377",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"preview"
+							],
+							"query": [
+								{
+									"key": "filepath",
+									"value": "/home/ec2-user/helpdesk_deploy/UPLOAD/3/file_example_MP3_700KB.mp3_1590489363377"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket-status(search)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1OTI4MDc4MDAsImlhdCI6MTU5MTk0MzgwMCwianRpIjoiMmYyOTg1YmMtMjRhMy00YjI4LWFhOTUtNWQxZDRhNjljNmMzIn0.rX_IMhuzxy-XXEMALu6N4CCZ4wm6AmQ2GgbuqpWfEEGaIpEYX2b43enNVznLm3qfCiWHhB2aAGfdoOC5p_kAew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/status/RAISED",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"status",
+								"RAISED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tickets-assign(case 1: default admin to other member)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1ODkwODMyNTUsImlhdCI6MTU4ODIxOTI1NSwianRpIjoiMGEzMTVkNDItOGE1ZS00MGMzLTgwYjEtMzMxZTJjMjYyMDgzIn0.rtQXt9Mlq_kFe28DDmOVszfDtmjjD2xhmnrPNYwRoQAvV7Tp7dH3BF0qEf0jdpMzkgTzyaWAP5k1FHyE4HexFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/assign/1?emailId=ankur.siwach@xebia.com",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"assign",
+								"1"
+							],
+							"query": [
+								{
+									"key": "emailId",
+									"value": "ankur.siwach@xebia.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket-resolution",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\":\"Ticket is resolved. You can move to new location.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/resolution/30",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"resolution",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change-ticket-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTkyODIyOTk3LCJpYXQiOjE1OTE5NTg5OTcsImp0aSI6IjA1MzRiNjc3LWFjYmUtNGMxZS1hNjUzLTNkNWY0NjVmMmQxNyJ9.z5P6wDxK-quxv6c11l1jt_cSXVG8ZRuYDMLspSh63pH7H5MARilSfB4jmoVUz2xjXWtkiW7GB-zi8lAswZYBdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"type": "text",
+								"value": "ANDROID"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/change-status/6?status=REOPENED",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"change-status",
+								"6"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "REOPENED"
+								}
+							]
+						},
+						"description": "This API is used to update the satus of ticket"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket-journey",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB4ZWJpYS5jb20iLCJleHAiOjE1OTI4MDc4MDAsImlhdCI6MTU5MTk0MzgwMCwianRpIjoiMmYyOTg1YmMtMjRhMy00YjI4LWFhOTUtNWQxZDRhNjljNmMzIn0.rX_IMhuzxy-XXEMALu6N4CCZ4wm6AmQ2GgbuqpWfEEGaIpEYX2b43enNVznLm3qfCiWHhB2aAGfdoOC5p_kAew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/ticket-journey/1",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"ticket-journey",
+								"1"
+							]
+						},
+						"description": "this API is to get all the details of a ticket journey."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTkyODI0MjU2LCJpYXQiOjE1OTE5NjAyNTYsImp0aSI6IjdkOGEyMzgwLTc0OTUtNGZjMC1iZmQxLWRiNDlhOTg3MjExMyJ9.YuaL3sfy6ygjhH_bSooUepxq5lf0oAhaNFG1824OVEz1X3bCIYrMr9WfwUZonLtdR5vmURNyA4kDh8YYQaKayA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/ticket-status",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"ticket-status"
+							]
+						},
+						"description": "This API to get all the pre defined ticket status"
+					},
+					"response": []
+				},
+				{
+					"name": "closeTicket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTkyODIyOTk3LCJpYXQiOjE1OTE5NTg5OTcsImp0aSI6IjA1MzRiNjc3LWFjYmUtNGMxZS1hNjUzLTNkNWY0NjVmMmQxNyJ9.z5P6wDxK-quxv6c11l1jt_cSXVG8ZRuYDMLspSh63pH7H5MARilSfB4jmoVUz2xjXWtkiW7GB-zi8lAswZYBdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/tickets/close-ticket/6",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"close-ticket",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "swagger",
+			"item": [
+				{
+					"name": "swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/swagger-ui.html",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"swagger-ui.html"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "feedback",
+			"item": [
+				{
+					"name": "givefeedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNTkyODIyOTk3LCJpYXQiOjE1OTE5NTg5OTcsImp0aSI6IjA1MzRiNjc3LWFjYmUtNGMxZS1hNjUzLTNkNWY0NjVmMmQxNyJ9.z5P6wDxK-quxv6c11l1jt_cSXVG8ZRuYDMLspSh63pH7H5MARilSfB4jmoVUz2xjXWtkiW7GB-zi8lAswZYBdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "ANDROID",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\":\"good\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/feedback/6",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"feedback",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "officeBooking",
+			"item": [
+				{
+					"name": "Booking Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NzAwNDg2LCJpYXQiOjE2MTQ4MzY0ODYsImp0aSI6ImY3OWNhNmM4LTRkNDEtNGE5Mi04YTg1LTQ5MTY1NmM4MmVhYSJ9.zrPm-azANZjoqT1nFoC44G9H1d44jXGDUbckEjAGlZmX-LVzuSTO3bwGfbEUcFxga_k62FuIVYWmyV2C3qs6kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993,\r\n    \"bookingDate\": \"yyyy-mm-dd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/save",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"office",
+								"covid",
+								"booking",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Booking Save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993,\r\n    \"bookingDate\": \"yyyy-mm-dd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/save",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"office",
+										"covid",
+										"booking",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Mar 2021 05:49:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614836999769,\n    \"code\": 200,\n    \"message\": \"success\",\n    \"result\": {\n        \"bookingId\": 450,\n        \"bookingDate\": \"2021-03-05\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Loaction Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NzAwNDg2LCJpYXQiOjE2MTQ4MzY0ODYsImp0aSI6ImY3OWNhNmM4LTRkNDEtNGE5Mi04YTg1LTQ5MTY1NmM4MmVhYSJ9.zrPm-azANZjoqT1nFoC44G9H1d44jXGDUbckEjAGlZmX-LVzuSTO3bwGfbEUcFxga_k62FuIVYWmyV2C3qs6kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/locationcheck",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"office",
+								"covid",
+								"locationcheck"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Location Check",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/locationcheck",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"office",
+										"covid",
+										"locationcheck"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Mar 2021 05:47:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614836829680,\n    \"code\": 200,\n    \"message\": \"success\",\n    \"result\": {\n        \"containmentZoneName\": \"NA\",\n        \"inContainmentZone\": \"false\",\n        \"containmentsAvailability\": \"true\",\n        \"allowedCount\": 265,\n        \"bookedCount\": 3,\n        \"availablity\": true,\n        \"header1\": \"I am Safe and Healthy\",\n        \"content1\": \"\\n\\n COVID-19 Self Health Declaration: \\n Your honest response will ensure your safety as well as that of other employees.\",\n        \"content2\": \"Myself and my family members are not suffering from flu-like symptoms: Fever, Cough, Breathlessness, Sore Throat etc.\\n \\n • I have not travelled domestically, internationally, and not come in contact with any COVID-19 case in last 14 days. \\n \\n • I will stop handshaking and use other non contact methods of greeting.\\n \\n • I will follow habits like regular washing of hands, avoid touching of faces, cover coughs and sneezes.\\n\\n • I will use videoconferencing for meetings and Incase, not possible hold meetings in open, well-ventilated spaces and avoid crowding • I will always wear masks to cover nose and mouth.\\n • I will Practice social distancing at work. \\n • I Will Frequently wash hand .\\n • I will not go down in between while working from office. \\n • I will follow all the suggested rules and regulation while coming to office and also at office. \\n • I will co-operate with security guards and help them to perform their duty to keep the office premises safe for me and also for my colleagues.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NzAwNDg2LCJpYXQiOjE2MTQ4MzY0ODYsImp0aSI6ImY3OWNhNmM4LTRkNDEtNGE5Mi04YTg1LTQ5MTY1NmM4MmVhYSJ9.zrPm-azANZjoqT1nFoC44G9H1d44jXGDUbckEjAGlZmX-LVzuSTO3bwGfbEUcFxga_k62FuIVYWmyV2C3qs6kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/availablity/2021-03-04",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"office",
+								"covid",
+								"booking",
+								"availablity",
+								"2021-03-04"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Check Availability",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"latitude\":28.4215727,\r\n    \"longitude\":77.0692993\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/availablity/2021-03-04",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"office",
+										"covid",
+										"booking",
+										"availablity",
+										"2021-03-04"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Mar 2021 06:03:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"allowedCount\": 350,\n    \"bookedCount\": 12,\n    \"availablity\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Booking Cancel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrcnVwZXNoLmFuYWRrYXRAeGViaWEuY29tIiwiZXhwIjoxNjE1NzAwNDg2LCJpYXQiOjE2MTQ4MzY0ODYsImp0aSI6ImY3OWNhNmM4LTRkNDEtNGE5Mi04YTg1LTQ5MTY1NmM4MmVhYSJ9.zrPm-azANZjoqT1nFoC44G9H1d44jXGDUbckEjAGlZmX-LVzuSTO3bwGfbEUcFxga_k62FuIVYWmyV2C3qs6kw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingId\": 450\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/cancel",
+							"protocol": "http",
+							"host": [
+								"168",
+								"63",
+								"250",
+								"105"
+							],
+							"path": [
+								"ticket-tool",
+								"v1",
+								"office",
+								"covid",
+								"booking",
+								"cancel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Booking Cancel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookingId\": 450\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://168.63.250.105/ticket-tool/v1/office/covid/booking/cancel",
+									"protocol": "http",
+									"host": [
+										"168",
+										"63",
+										"250",
+										"105"
+									],
+									"path": [
+										"ticket-tool",
+										"v1",
+										"office",
+										"covid",
+										"booking",
+										"cancel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Mar 2021 06:02:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin,Access-Control-Request-Method,Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": 1614837757662,\n    \"code\": 202,\n    \"message\": \"Booking has been canceled \"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "reportsIncidentVsRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NDk0OTExODIsImlhdCI6MTY0ODYyNzE4MiwianRpIjoiZDI1NzlkNjEtZTU1ZC00NmQ0LWFiMzAtYTg4NGIzNzMwNjcxIn0.XR1vyDo0z1Lldv9ltNH4vfA7QaugJlLFmR4RihpnAlSebAtQtWTpMz5c3TgviRNxaLUq7bntSqjPiu1ScAmXSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/ItReports/user/ITDepartment/incident/request?startDate=06/01/2020&endDate=08/30/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"ItReports",
+								"user",
+								"ITDepartment",
+								"incident",
+								"request"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "06/01/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "08/30/2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "slaTrendAchivedMissed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NDk0OTExODIsImlhdCI6MTY0ODYyNzE4MiwianRpIjoiZDI1NzlkNjEtZTU1ZC00NmQ0LWFiMzAtYTg4NGIzNzMwNjcxIn0.XR1vyDo0z1Lldv9ltNH4vfA7QaugJlLFmR4RihpnAlSebAtQtWTpMz5c3TgviRNxaLUq7bntSqjPiu1ScAmXSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/ItReports/user/SLATrend/achived/missed?startDate=07/04/2020&endDate=09/30/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"ItReports",
+								"user",
+								"SLATrend",
+								"achived",
+								"missed"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "07/04/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "09/30/2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "achivedVsMissedDepartmentUserAdminWise",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NDk0Nzg5MDUsImlhdCI6MTY0ODYxNDkwNSwianRpIjoiYmQ3ZjY4OTYtY2ExNi00NTllLWE1YjUtMTNmNTE1YjBkZDdiIn0.fronyOcQdNSRSOXKF8xk3tYABDQGfbQiUR_41TgflGiyNFpM747tYPZl2-4JzRpPHuHSdbPyhrUXeMY297Oe3w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/user/achieved/missed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"user",
+								"achieved",
+								"missed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "totalResolvedVsMissedCount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NDk0OTExODIsImlhdCI6MTY0ODYyNzE4MiwianRpIjoiZDI1NzlkNjEtZTU1ZC00NmQ0LWFiMzAtYTg4NGIzNzMwNjcxIn0.XR1vyDo0z1Lldv9ltNH4vfA7QaugJlLFmR4RihpnAlSebAtQtWTpMz5c3TgviRNxaLUq7bntSqjPiu1ScAmXSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/ItReports/user/total/resloved/missed?startDate=07/04/2020&endDate=09/30/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"ItReports",
+								"user",
+								"total",
+								"resloved",
+								"missed"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "07/04/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "09/30/2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "itDepartmentEmployeeList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTAwODM4OTcsImlhdCI6MTY0OTIxOTg5NywianRpIjoiMjM5NGY0MzUtMDgxNS00YzM5LWEwMDYtZjgxM2I4ZjdhMTFhIn0.E0zQfjTeD-sN1fruSt3mMAnaOB2GBxZnsRufJ4HP6d00IYXYgRdhQdImn3NBmyYdlwwaVncr0GliUDVqDDIZCg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.7.105:8085/ticket-tool/v1/dashboard/employee-list",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"7",
+								"105"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"dashboard",
+								"employee-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "itDepartmentReports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTAwODM4OTcsImlhdCI6MTY0OTIxOTg5NywianRpIjoiMjM5NGY0MzUtMDgxNS00YzM5LWEwMDYtZjgxM2I4ZjdhMTFhIn0.E0zQfjTeD-sN1fruSt3mMAnaOB2GBxZnsRufJ4HP6d00IYXYgRdhQdImn3NBmyYdlwwaVncr0GliUDVqDDIZCg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/itReports/all/itDepartmentReports?startDate=12/01/2021&endDate=12/31/2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"itReports",
+								"all",
+								"itDepartmentReports"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "12/01/2021"
+								},
+								{
+									"key": "endDate",
+									"value": "12/31/2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "achivedMissedForAllDepartment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTAyNjg2NzEsImlhdCI6MTY0OTQwNDY3MSwianRpIjoiZTNhNTYwODctMGYxMy00NjNjLWEyNGItNGVhYzVmYzQ1NTQ0In0.eYntzROgPqv80Sv6UMcrkRd5ztWgZevfb8vmYK6UqFCjuBdhAu9fZPgN19Bq1I_aFo62zl9PqEgS7uFAsSounA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/department/users/achieved/missed?startDate=12/01/2021&endDate=12/31/2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"department",
+								"users",
+								"achieved",
+								"missed"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "12/01/2021"
+								},
+								{
+									"key": "endDate",
+									"value": "12/31/2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categoryWiseSegregationIncidentAndRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTAyNjg2NzEsImlhdCI6MTY0OTQwNDY3MSwianRpIjoiZTNhNTYwODctMGYxMy00NjNjLWEyNGItNGVhYzVmYzQ1NTQ0In0.eYntzROgPqv80Sv6UMcrkRd5ztWgZevfb8vmYK6UqFCjuBdhAu9fZPgN19Bq1I_aFo62zl9PqEgS7uFAsSounA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/itReports/all/categoryWise/incident/report/5?startDate=09/01/2020&endDate=11/17/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"itReports",
+								"all",
+								"categoryWise",
+								"incident",
+								"report",
+								"5"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "09/01/2020"
+								},
+								{
+									"key": "endDate",
+									"value": "11/17/2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAssignedTickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTA1MzE2NDQsImlhdCI6MTY0OTY2NzY0NCwianRpIjoiYjM5ZjI5YWEtM2Y3MC00NjNiLTk2ZDItMDBiZTRlYmUxNjhkIn0.YLnptD6iFm4Ez90Q0L773tVPF8NpmKYTaArpCtbUalk5sZf6WAEXvSwu0VZ8T2KBkzHDMeMMa0H8gXMKTXK_-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/dashboard/getAssignedTickets?status=&page=0&limit=20&email=tushar.kaushik@xebia.com&startDate=2020-03-01&endDate=2020-09-08&searchFilter=system",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"dashboard",
+								"getAssignedTickets"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "email",
+									"value": "tushar.kaushik@xebia.com"
+								},
+								{
+									"key": "startDate",
+									"value": "2020-03-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2020-09-08"
+								},
+								{
+									"key": "searchFilter",
+									"value": "system"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ItDomainWiseTempory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTEyMjM0MjUsImlhdCI6MTY1MDM1OTQyNSwianRpIjoiNTgxOGU4OWQtZDYyZC00YTk4LTgwZTEtMTk3MjVkMDJjODI5In0.L4aqn4VCsqCK1t3-5VPHyDsCn0IUSF5xoOxXXqnpevFgPZKtIkpbe0-6g8cBNceWOUkYYWJ1mpW9VlpiaKLj_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/itReports/all/itDomainWise?startDate=12/01/2021&endDate=12/31/2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"itReports",
+								"all",
+								"itDomainWise"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "12/01/2021"
+								},
+								{
+									"key": "endDate",
+									"value": "12/31/2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excelFileDownload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpc2hhLmd1bHNpYUB4ZWJpYS5jb20iLCJleHAiOjE2NTI0NjE5NjIsImlhdCI6MTY1MTU5Nzk2MiwianRpIjoiMTliNDkwMTQtYjU4Zi00MmY5LTkyNDAtMzI0MjE3YWU3MzVjIn0.SRZN-POPp8mHxuJ5nuW66NDu6RKLvWSmeTW1DmV3Qq3DOYxnMwcCgd3OmEEKgot8Wo8xLatcnv8YDOwDFXT76w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-channel",
+								"value": "WEB",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8085/ticket-tool/v1/tickets/user/missed/department/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ticket-tool",
+								"v1",
+								"tickets",
+								"user",
+								"missed",
+								"department",
+								"file"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "excelFileDownload",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-channel",
+										"value": "WEB",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8085/ticket-tool/v1/tickets/user/missed/department/file",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"ticket-tool",
+										"v1",
+										"tickets",
+										"user",
+										"missed",
+										"department",
+										"file"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=\"IT_MissedSlas.xlsx\""
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7087"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 May 2022 16:19:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000b\u0000\u0000\u0000_rels/.rels���J\u0003A\f@��0�ޝm\u0005\u0011�i/\"�&R? Τ���N�����\u001b�hK-\n�6���A�l�i4��K������P�\u001c��:x��/n�\u0014�\u0018p�H\u000e\"�f}y�<҈�=��S1\n��A'�n�-��\tKŉ�V��'\u0014}��&�\u0003�dWu}m�w\u0006(�h\u001c��68�۰\u0004��ܒ8�G��yxf\u001e*�k�=�oF�~�{�c�2Q�\u0013\u0006G?��3Z}\u0019\u0005�\u000f��\u001fS�o%��b��H:���T�{]����ob?��N$\u0018P�z��؃���\u0007PK\u0007\b�U\u0012O�\u0000\u0000\u0000a\u0002\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xml���J\u00031\u0014����\u0010��IZ\u0017\"2c\u0017�,�`}�����$���{3�\u0005k���l�p�=��%L=Y[CV\u0010����c6�\u0004��J�yC_g��5%)\u000b���\u000e\u001a�<�ܞ�ճM�D�إ�v9�\u001bΓ����|\u0000�J�\u0015\u0019�q΃�\u000b1\u0007~9\u001a]q�]\u0006��\\2(�\u0011��{h��dr�UK���\u0010��\"#\u001d_9u\u0010]�bY\u0004�{R�C�@\u0003%\u000fkL��\n�D��}\u000e��y_����Z��0}�j\t�˥�\u0012\u0006%[��BDc�\u001av�S\u0011�\u0018��<E5q�f'�\u001c��\u0011Nj[������)D\u0010*u\u0000�\u001a�:\u0011A�䈏�;���/��i��\u001c�H��ᧁ+�B�c\f�>.޼_\fMQ���� z1�~\u0019�ij��\u0010p�\u0001PK\u0007\bXh��F\u0001\u0000\u0000R\u0004\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0010\u0000\u0000\u0000docProps/app.xmlM��\n�0\u0010D��\u0010ro�z\u0010�4� �'{�\u000f\b��\u0006�MHV�盓z�\u0019��T��E�1e\u0017�����\u0002Ɇ�ѳ����:�No7jH!bb�Y�\u0007�V���\u0004�����T�)$o���0M��9ؗGb�7�\u0001pe�\u0011�*~�R�>��Y�EB��\u0014�\u0018nW\u0005������\u0000PK\u0007\b6n�!�\u0000\u0000\u0000�\u0000\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0011\u0000\u0000\u0000docProps/core.xmlm�AK�0\u0010���!��&iqYC�E�\u0005Aq�.����m�MB\u0012���M��\u00055��{���+6��G\u001f�|gt�YJ1\u0002-��tS�}�M�\u0018� �\u0012��Pbm�:?+���8�9c��\u000e<� ���%nC��\u0010/[\u0018�O�CG�ոA��u\r�B��\u0006HF�\f\u0010�\u0012A�\t�؅��H%\u0017�}w�\fP�@\u000f\u0003��\tK\u00199y\u0003����0+����5�c:�/n������|���x\t8ތ�+�\u0003�t \u0002(\u00141<|ژ̏�_��[\\e4�\u0012z�мf+�.y�~)ȯ�\u0013��b\\u\u0015�i\u0001�\u001en'�R���?���\u0017PK\u0007\b��?�\u0010\u0001\u0000\u0000�\u0001\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0014\u0000\u0000\u0000xl/sharedStrings.xml�X�r�8\u0012}w��C�^f�J�e;�r<��3\u001b�ı7Rf�jj\u001e \u0012\u00121\"\t\u0006\u0000�hk?~O\u0003$-�bƳ\u000f�\bĥ�q��i\\|�5�h+�U�x;:�&#�E�\u0013U�ߎ>/~<~5���/G\u0017�:�uU8Lz�zDU��T�\u001e��\u0018\u00116*��Q�\\����Ʃ̅�t)\u000b|Yi�\u000b��f}bK#EbS)]���M&/Nr����U�\u0017�r��t��\u0013wyq�ca|^-���\u000e_K\u001b\u001bU:8��t����\u000f��㷽�\u001f�L�i����ڈDҍ���yg\u001e��Ɩ\"�oG��J���\u0003�s\u0011��ietNK��W�?_\t'2U\b�h�h�\u001dU������Ri$}�\u0005H2�K�\f��ŷ6�%ʒ�Ә\u0017Q׃��Ǔg�g����\u0017�M�\u0012q\u0013t�\u0012��V\u000eg��D\u001cKk�\u000b6�H�\u001d���Q.1\u000b�؃�Y��,yC���^<{}���NX#�F\u0014��D�\u001b-RQl,��D�\u0015E,�'��\u0019FD�0*\u0015��_�R�(�yw�60gM6���\u0003�I�[*\u0010��Sw�\u0007Q:]���\u0004\u0006�no\u0003����)B\n�\u0010M'��L\u0017k����T�Jd�si4�\u001f�4������\t~�\u0019��\u000f�e&y%'\u0000�\u001ej]e�q�\u0011�Wm�=?}=t�\u001eoW��,�\u0012��7�Q�Sp�;}�;���bQ�IY��\u0018?0\u0012�m\u0003�3��[+��\u0015#�&��N�d%#6꥔.\u00140�\u0017�$wK-LB5�s��p���N���L�9\f\u00187K|8�DqV�\u0006��7�����Z�W.���\u0015\u000f*�V�F[��,�T�����#h%R\u0018\u000f�q��C*э�\u0011b���\u0003\\\u0011��\u0014V\u0002o2�x?@\u001c:�ʞ����n|VXpGF7s�]�T?�N\u0007��\r�>^\u0001�R��G���DK[|\u0017\u0016��\\:�KK���2\\\u00102PuD��`\n\u001f���7�\u001a���\u0016�\u0012��\u001e��S��N\n�\u001cz>�P�Fl��$2�\u0003Y��`e\u0006s\u0013�>�<d��S���\u001c\u0003p\u0019��li\"\"T\u0013��� <�+\u001eM [%�\u0015�\u001bQk�����G�_zN<\u001br�\u00075f$]�L�Mw�×�~�/z]\u0016���T\u0019����\u001e�jvܧ��T�\u001b��CU\u0001xs�f\r��J�9~{\u001c\u000bn<�W�+l�{NU�P9��Ȍ�(����\u0005� �zukX*�2�\u000e�H(s�*�N?(<���!�2�K٦@\u0015H�\u0007���h\\\u000f�G\u0006և3��T�k.~��\u0003n/|1W6�*ؔ��ᗧ��h�ç������Cr��|\bM\u001f�zͦ���\u0014]�Td+&م�]�{U(�\u0012d\u0017[�ph�z�\u0007Y�QSZ{�����I��F�?0�8��8��?%�(SE��a�Ie�\u0002`\u0018��\u0014�cї�1a���y��H����@�\\��7i�\u0012跈�\u0002`j��\u0010��(m��y�C�f�'\u001596���\u0011]�\f8\rx��\u000f\"X��zC���k\u001e[f\u001a\n8�\u0005bav�~��/+��K�,\u0017���\u001en� �ǃC�A-\u00005�0�Q�d�L��e�X\u000fm�\u0003��\u001f�0\u0016*�8>)f�T\u0005���!�\"��O�\u0019����\u0017(d�Uq[v�\u0003\u001c�8�\\�����nv�}\u0018�\u001c7\t�\u0017Zg4���}%�k+�Ke\"\u0016���g�\u0003�\u001e�\"�nU!\u00021���W��R�~�h�@\u0013���\t\u0001 �C\u001d�\u001cp�ȎɠNL�l�)X�m(��\u001a����~T�\\�\f��\n�\u001b����gϐ\r�z\";V:o�}�����6R���rM�\u0012Ŏ\u0003\u0003\u0005��Rr��)�9�a��>\u0019\u0014L���6��HRoV��䵉w�� �\u0015���Yd7��Z� C\u000b��h�\u00118��ݵ�+ܧ�*0\u0005��Ow�T!�\u0002���/\"�B\b�U����\u0003��`�a&z\u0010N+�\u0015#\u001c/�15\u001f�����\n0�\u0007\u0011t�պ��G\u0017'�[/\u001cS!\u000e\f��(��b\u001aV�v��\u0015�Y�9�m���Yt�\u0003\u000e�1�\u001f�1�U\u0017��_89Aw�u����5\u000fy\u0013�\u0007}W�v�3����8Ӷ�R,�jb��O��=o�\u000bL\u0018��\u001b�)B!C��!\u0010�S[���dp;\\�DIH�G��I�w_s�x�M\u000f\r��[\u0016��7���fy�Gq��� �×�tP\\�|��u?��r[+�<nlێ�߹7g�۟\u0016S�ԦA��\u001c�/\u0012�7�*�\r��u\rd\u000b�����\u000b��L\u0006{����\u0006�[�aպ`��J� �����./�\u001fY�������;V.o�@3^$��{\"��������z���%��ډ\u0011e\u0003��\u0015}�{�\u000eH��+&\\��%��U�S/�+�+�\u000e���~E4ʦb�F�tb�\"��\u001fH6\u001e��Zl�+:��\u0012��h`�Ͼ�d|�\u0010�\f@qLwF8)745;A}���������˿��q�Cq��!g�r\u0014A��>Λ�z���G��sI\r&��@��\u000en|t��JĪ\u0015�AƷK�\u000fZ�e\nWc\u001e�܍(~\u0006\f�.�\u000f��\u0005\u0005��b�\u0002���{ӣ+\u0014�����\u0019�����\\#o��h\u000e|�\n�5�\u0000��4��\u0013��\r\u001e�У'��&\\�i�ٱ\u000f�7��9��\u001e5\u0015�6^d@�%�A�����\u0017�F\u00111��\u0004G\b�{)<|g^��U�X?��X췲,{�NUY7\u0006\u0018���\u000b�t_�+���X\u0018�'�Ԛ�\u0002�?�\u0011lӵ��\b��0��P���Ӣ~@��\u0007���7\u001f�\u0016�n0�Ϩ��%w�Q�L�F�@>�a\u0001��\u001e��7u��C�����\u000b\u001f(M\u0005����4���V�\u000fԹ}�2\\\n;�F�E��\u0019��uC�[tJ%?\u0001�\u001a\u0015�w�~jy�s�ax�\u000f/\u001a���4Ї\u001e|dQ=�9�Ϯ\u001eb�$�+}\u0004`��+\u001bHc�\r��g^�ҬH*��@��=�~\u001b�8����\u0003�P���\u0007[X\n�΅E���n��F����X\u001930�y�J���@w\u000f��]���T�C�Ư4��O�ן�\u0016t�nz���<]��\u001e\u001dR�O_�6�IP\f��\r\u0015�ϩ����\u0003��K\t�ezO�a�s�{G�X�.�\u0007PK\u0007\b���\u0015�\t\u0000\u0000�\u001b\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\r\u0000\u0000\u0000xl/styles.xml��MO�0\f��H��(w�6\u0010B�-BHC�\u0019\u0012׬u��ĉ�\fZ~=�h�r@ �,�[�O\u001c�+n{%�\u001bX'4�ty��\u0004�֍���ϛ��5��NO\n�\u0007\tO;\u0000O�\u0003]Iwޛ\u001b�\\�\u0003�ݹ6��K���>��c�X���&%�j��b�\u000b�U�{�VޑZ�їtAYU�\u001a�ʊf�*�\u0007y�2�\u0016{\u000be���\u0012�\r�Д�:j�\u0015�{.�֊��J�!˫(�N�:%P�(�|K�=r��2�����ۜz���=\u001d.`���7\\�,T��ރ�uH�\u0018o\u0006\u0003%E�#&��P�p��`��{G⇪����.����w �#<e�m\u0013�bz̒NRUHh}�[���鵉���k\u0015�F�N#���1\u0006\u0001[��Oq�^�/�%y)\u001e��\u000f$\u000et\nCCc�19��9-�g؋?aI�\u001e�߹�G��\u001b7���!Nv\\�Qб�i{��]U�M�P\u0001z�n��@?\u0003��\u001d��\u0006Î���\u0013PK\u0007\bL�w��\u0001\u0000\u0000�\u0003\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000f\u0000\u0000\u0000xl/workbook.xml��MO�0\f��H���w�\u0014\u0010���.\u0013�\u000eHH\f�^���Q�a���v*p�d����o��\n^�(�KQC�R (�d]<hx�=�<º��j�)\u001f�)\u001d��G�З2�R��) ��@q�t)\u0007,c�\u0007�C&��\u0013���R\u000f2��p1��?��u��&��@�\\$�<��-�n`h��fa�P���5t�@�ʹ�pt�_p�\u0002Mq'��^��8�\u0007�;/SD\f���1�}�� r�����w ff;�j�,�ry�~\u0003PK\u0007\blY�6�\u0000\u0000\u0000b\u0001\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001a\u0000\u0000\u0000xl/_rels/workbook.xml.rels���j�0\f���}q��\u0018#n/��k�=���84������O�ak`�\u001d������3�]}N���BC�\u0006��\u0006��%?����~��\f��Fo�\u0014�@L�Z�ߵ;\u001c-�\u001d\nC&%�H\u0006\u0002s~њ\\��R�2F�t�L��-���\u001dl�zQ�O�\\2@�JjFV[o�l}\u0003joK�l��-�_��!U���)��S�\r\u000e�ɽO\u0018�\u000f\u0007=������P�ӈ�w9S�K<�J\u001cS9P@��W�����'����\u000f��\u0017PK\u0007\b�J\u00120�\u0000\u0000\u0000K\u0002\u0000\u0000PK\u0003\u0004\u0014\u0000\b\b\b\u00003��T\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0018\u0000\u0000\u0000xl/worksheets/sheet1.xml��Ko�F\u0014��\u0005�\u001f\b�k΋�BR�Z\u000e�E���5mі\u0010I4H���/I+\u001c��3��I,���9�\f�KJ�O�\u000e��n�]s\\��J�Q}�k6���2����?\u0015�Տ?,^��k���>\u001a\u0006\u001c�e���ǟ����և��j\u001e�����=T��}H�Ƕ�6Ӡ�>1Jeɡ�\u001d��b�;���Q[�/�_t��\u0016\u0013��~��~����6�����e<̯�n����]_\u000f����\u001eG'0��4�/m��﫧}�g��[�{��C�t�9\f�k���ot؍���P}���m��26���<�����o\u000e�����1��4�|t�=\r�\u001f\u001d�N\u0003�G\u0007����\u0003���hzG�U_�\u0016m�\u0012��4T\u001d\u0018�^4��]\u001cu��}^�E�<\u000e=\u0011�\"��\u0012�H���\u001a\t���A��D2�z����n�!�i���\u0014e6l\u00021sV�\u0015K��������o���␜O��ӵ�M׾;]$�t��.\u000e\tL���u8�\\�0]\u0007�\u000b1]$J1]$�8�\r\"�\u0000�\u001c �\u0000F�,�\u0004)\u001e].p��\u0015N\u0010��\t\u0012X��\u001c\"c!�\u001cBdX[.\u001b��uC\u0010\u0019� �\u0010�\u001c\"'!�q\u0010\"�ڹ\bA\u0010���\u0004\u0011\u000b� �\u0010�\u001c� !,ٿ\u0005�6\u0002�&�XqkD \u0004�bx�r\u000eQ�\u0010x&J�-\u0016����\u001a\u0011\bA�\u0004΄V�Y�� ��\u0004�)/�\u0005c� \fl\fV'\u0014�L��F)1���rs\\��\t�QH�\"\u0010��X���(�b\u0014��)e\u0014d��Q��(��\u000eD����!�!\u000b\f�j��B\u0018�S\b�QH�P\u0014�q�\u001e\u001f�h��P���(�Ie\u0014bs��Y�P\u0014/t͌nT�Qд6�Q\b\u0003{�\u0018\u001b��:�(^�y�\u0014h\u0013�����b�l�\b�\u000b\f\u0019�\u0002Q��5�{F\u0016\u0018Z���\u0004a�^��\u001b��:�(^�9�ddۣ{��#c��B4\u000fQH�P\u0014/z�Lo��(h`\u0007�$\f(��\u001e��:�(���0�\u001b�gŠ��T$cd\u0003I\u0018��ꔁ(����~��a\u00144p*�H��6�1FF!�\rD9��f��\u001ao\u0010\r���^a��\na�b��d�(����^�9zŐ{sX`��\u0005v��Y�P\u0014o{�l�2�������\b��\u001e�0\u0018��\t(�x�\u001bf{����\u0006�d\u000f�\u0018ك\u0011\u0006��:�(����^�䬠�3�+���r��Y�P\u0014o{Cl�JK����3ك1F�`��+\u0018�\u0013��mo��\u0015y�e�����\u0018#{0��YA&\u000f)���\u0010۫�$\u000b\f\r��\u001e�0x1����X�(���\u0012۫�tƖ�oKE\u0012&��$a \n�\u0013��mo��Ui�\nf���l'\u0019#�I�`\u0014R'\rD���C\u0014�Qȃq��/`֌�e\u0014��=�����\f̢�s��\u0019#�=a�:�(����~�B�\nyJ\u000f{�0��d��\u0018\u0013&\u0018���\u0012۫���H�\u0006.`�\u0010\u0006��\u0005���\tF���ʐ��\u0016\r\\�g=���Bl\u000fQ�\tF���EF�`h�Bvƌ��1ap��:�[/�mo��(䬠�K�+���r��\t\u0013��mo��\u000b�\u0019[4p);c��Θ0x1F&\u0014�y�;f�\"ŋ�C\u0003��3f�l\\\b\u0003W0Ƅ�x�;f��a\u000f����T$cdgL\u0018�\t\u0013��m��\u000b�O�\u001d\u001a����gք�(�\u0004�x�;f�\"%Q����!&�p� ��\u001bwȂL0��'�L�y��ޱ\u000f�e�O!�\u001c\u0013\bðB�\u0007H�\u001b�Q�kl)\u001d1���� ��\u0017���B2Mr�������j\u001fv�.�m��9,cu5~%�i��\u001d_\r�{[W��ž��'*���/5M?���i��ݝ�K[��\u0001PK\u0007\b1�\u0003��\u0005\u0000\u0000�%\u0000\u0000PK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T�U\u0012O�\u0000\u0000\u0000a\u0002\u0000\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000_rels/.relsPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��TXh��F\u0001\u0000\u0000R\u0004\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000%\u0001\u0000\u0000[Content_Types].xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T6n�!�\u0000\u0000\u0000�\u0000\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0002\u0000\u0000docProps/app.xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T��?�\u0010\u0001\u0000\u0000�\u0001\u0000\u0000\u0011\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000}\u0003\u0000\u0000docProps/core.xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T���\u0015�\t\u0000\u0000�\u001b\u0000\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0004\u0000\u0000xl/sharedStrings.xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��TL�w��\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u000e\u0000\u0000xl/styles.xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��TlY�6�\u0000\u0000\u0000b\u0001\u0000\u0000\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0010\u0000\u0000xl/workbook.xmlPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T�J\u00120�\u0000\u0000\u0000K\u0002\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0011\u0000\u0000xl/_rels/workbook.xml.relsPK\u0001\u0002\u0014\u0000\u0014\u0000\b\b\b\u00003��T1�\u0003��\u0005\u0000\u0000�%\u0000\u0000\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001a\u0013\u0000\u0000xl/worksheets/sheet1.xmlPK\u0005\u0006\u0000\u0000\u0000\u0000\t\u0000\t\u0000?\u0002\u0000\u0000Z\u0019\u0000\u0000\u0000\u0000"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

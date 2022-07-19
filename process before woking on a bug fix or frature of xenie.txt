@@ -1,0 +1,6 @@
+check out stating 
+take a pulll
+take a new branch from staging 
+commit 
+push to your branch
+after rewiew it will be merge it stging branch
